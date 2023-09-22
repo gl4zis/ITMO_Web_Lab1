@@ -2,6 +2,7 @@ const form = document.getElementById('submit-form')
 const table = document.getElementById('res-table')
 const resetButton = document.getElementById('reset')
 
+window.request = superagent
 form.onsubmit = processForm
 resetButton.onclick = resetTable
 window.onload = fillTable
@@ -24,17 +25,17 @@ function setX() {
 }
 
 function submit(x, y, r) {
-    fetch("script.php?X=" + x + "&Y=" + y + "&R=" + r,
-        {
-            method: "GET",
-            headers: {"content-type":"application/json"}
-        })
-    .then(processResponse).then(addNewTableRow).catch()
+    request
+        .get("script.php")
+        .query({"X": x, "Y": y, "R": r})
+        .then(processResponse)
+        .then(addNewTableRow)
+        .catch()
 }
 
 function processResponse(response) {
     if (response.status === 200)
-        return response.json()
+        return response.body
     else {
         console.log(response.headers.get('X-Status-Reason'))
         return Promise.reject()
