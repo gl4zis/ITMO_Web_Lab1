@@ -3,7 +3,7 @@ const table = document.getElementById('res-table')
 const resetButton = document.getElementById('reset')
 
 form.onsubmit = processForm
-resetButton.onsubmit = resetTable
+resetButton.onclick = resetTable
 window.onload = fillTable
 
 function processForm(e) {
@@ -41,7 +41,7 @@ function processResponse(response) {
     }
 }
 
-function addNewTableRow({hit, r, time, x, y}) {
+function addNewTableRow({x, y, r, hit, time}) {
     const date = new Date().toLocaleString()
     localStorage.setItem(String(table.rows.length - 1), JSON.stringify({x, y, r, hit, date, time}))
     addTableRow({x, y, r, hit, date, time})
@@ -59,8 +59,7 @@ function addTableRow({x, y, r, hit, date, time}) {
     row.insertCell(6).innerHTML = time
 }
 
-function resetTable(e) {
-    e.preventDefault()
+function resetTable() {
     for (let i = 0; i < localStorage.length; i++) {
         table.deleteRow(-1)
     }

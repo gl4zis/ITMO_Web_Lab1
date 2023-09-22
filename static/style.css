@@ -96,8 +96,11 @@ input[type=text], select, button {
 }
 
 #reset {
-    text-align: center;
     max-width: 200px;
+}
+
+td.reset {
+    text-align: center;
 }
 
 input {
@@ -105,7 +108,7 @@ input {
 }
 
 input#Y {
-    border: 2px solid red;
+    border: 2px solid;
 }
 
 table.results {
