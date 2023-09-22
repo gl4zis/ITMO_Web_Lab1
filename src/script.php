@@ -10,6 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         header('X-Status-Reason: Validation failed');
     }
 }
+
 function new_result() : array {
     $x = NULL;
     $y = NULL;
@@ -22,12 +23,11 @@ function new_result() : array {
     }
 
     if (valid_x($x) && valid_y($y) && valid_r($r)) {
-        return array('number' => NULL,
+        return array(
             'x' => $x,
             'y' => $y,
             'r' => $r,
             'hit' => check_hit($x, $y, $r) ? "YES" : "NO",
-            'date' => date("Y-m-d H:i:s"),
             'time' => number_format((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']) * 1000, 3) . "ms"
         );
     } else
@@ -35,9 +35,7 @@ function new_result() : array {
 }
 
 function valid_x($x) : bool {
-    $valid_x = [-2, -1, 0, 1, 2, 3, 4, 5];
-
-    return $x != NULL && is_numeric($x) && in_array($x, $valid_x);
+    return $x != NULL && is_numeric($x) && $x >= -2 && $x <= 5;
 }
 
 function valid_y($y) : bool {
