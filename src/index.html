@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <script src="../js/validation.js" defer></script>
+    <script src="../js/ajax.js" defer></script>
+    <script src="../js/three.r134.min.js"></script>
+    <script src="../js/vanta.net.min.js"></script>
+    <link href="../static/style.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>LaboratoryWork1</title>
+</head>
+<body>
+    <table id="main">
+        <tr>
+            <th>
+                <div class="container header mh-center">
+                    <img id="icon" src="../static/dog.jpg" alt="No icon">
+                    <h3>
+                        Макеев Роман
+                        <br>
+                        Группа P3208
+                        <br>
+                        Вариант 1814
+                    </h3>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <form id="submit-form" class="container form mh-center" method="get" action="index.html">
+                    <table class="mh-center form_table">
+                        <tr>
+                            <td colspan="2">
+                                <label for="Y">Type Y:</label>
+                                <br>
+                                <input type="text" name="Y" id="Y" required
+                                       minlength="1" maxlength="10" placeholder="-5...3"/>
+                            </td>
+                            <td colspan="2">
+                                <label for="R">Select R:</label>
+                                <br>
+                                <select name="R" id="R" >
+                                    <option value="1">1</option>
+                                    <option value="1.5">1.5</option>
+                                    <option value="2">2</option>
+                                    <option value="2.5">2.5</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </td>
+                            <td class="zone" rowspan="2">
+                                <table class="form_table">
+                                    <tr>
+                                        <td>
+                                           <img class="zone mh-center mv-center" src="../static/zone.png"
+                                                alt="Image didn't found">
+                                            <!--
+                                           <canvas id="canv" class="zone mh-center mv-center">Some text</canvas>
+                                            -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button class="mv-center" id="submit" type="submit" disabled>Submit</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                    <p>Choose X:</p>
+                                    <input type="radio" name="X" id="-2"
+                                           value="-2" checked/>
+                                    <label for="-2">-2</label>
+                                    <input type="radio" name="X" id="-1"
+                                           value="-1"/>
+                                    <label for="-1">-1</label>
+                                    <input type="radio" name="X" id="0"
+                                           value="0"/>
+                                    <label for="0">0</label>
+                                    <input type="radio" name="X" id="1"
+                                           value="1"/>
+                                    <label for="1">1</label>
+                                    <input type="radio" name="X" id="2"
+                                           value="2"/>
+                                    <label for="2">2</label>
+                                    <input type="radio" name="X" id="3"
+                                           value="3"/>
+                                    <label for="3">3</label>
+                                    <input type="radio" name="X" id="4"
+                                           value="4"/>
+                                    <label for="4">4</label>
+                                    <input type="radio" name="X" id="5"
+                                           value="5"/>
+                                    <label for="5">5</label>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table id="res-table" class="results mh-center">
+                    <tr>
+                        <th colspan="7">
+                            <h3>Results:</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>№</td>
+                        <td>X</td>
+                        <td>Y</td>
+                        <td>R</td>
+                        <td>Hit</td>
+                        <td>Time</td>
+                        <td>Time of work</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form id="reset" class="mh-center">
+                    <button class="mh-center" type="submit">Reset</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        VANTA.NET({
+            el: "body",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            points: 10.00,
+            maxDistance: 20.00,
+            spacing: 15.0,
+            backgroundColor: 0x0A0A0A
+        })
+    </script>
+</body>
+</html>
