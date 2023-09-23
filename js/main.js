@@ -36,7 +36,7 @@ function setX() {
 function submit(x, y, r) {
     request
         .get("script.php")
-        .query({"X": x, "Y": y, "R": r})
+        .query({"X": +Number(x).toFixed(4), "Y": +Number(y).toFixed(4), "R": r})
         .then(processResponse)
         .then(addHit)
         .catch()
