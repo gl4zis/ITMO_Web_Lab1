@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="new hit paints on canvas">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="click on canvas to make hit">
+      <change beforePath="$PROJECT_DIR$/js/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/table.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +93,7 @@
       <workItem from="1694246825184" duration="7013000" />
       <workItem from="1694372707800" duration="45329000" />
       <workItem from="1694932091706" duration="4355000" />
-      <workItem from="1695380127776" duration="26899000" />
+      <workItem from="1695380127776" duration="28181000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -153,7 +151,39 @@
       <option name="project" value="LOCAL" />
       <updated>1695472409929</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="saving hits on canvas">
+      <option name="closed" value="true" />
+      <created>1695473877212</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1695473877212</updated>
+    </task>
+    <task id="LOCAL-00009" summary="saving hits on canvas">
+      <option name="closed" value="true" />
+      <created>1695474039317</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1695474039317</updated>
+    </task>
+    <task id="LOCAL-00010" summary="click on canvas to make hit">
+      <option name="closed" value="true" />
+      <created>1695474617405</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1695474617405</updated>
+    </task>
+    <task id="LOCAL-00011" summary="click on canvas to make hit">
+      <option name="closed" value="true" />
+      <created>1695474703510</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1695474703510</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +208,8 @@
     <MESSAGE value="ajax moved on SuperAgent" />
     <MESSAGE value="img changed on canvas" />
     <MESSAGE value="new hit paints on canvas" />
-    <option name="LAST_COMMIT_MESSAGE" value="new hit paints on canvas" />
+    <MESSAGE value="saving hits on canvas" />
+    <MESSAGE value="click on canvas to make hit" />
+    <option name="LAST_COMMIT_MESSAGE" value="click on canvas to make hit" />
   </component>
 </project>

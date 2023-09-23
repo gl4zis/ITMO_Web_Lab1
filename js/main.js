@@ -18,7 +18,11 @@ function processForm(e) {
     const y = document.getElementById('Y').value
     const r = document.getElementById('R').value
     submit(x, y, r)
-    return false;
+}
+
+function processCanvasClick(x, y) {
+    const r = document.getElementById('R').value
+    submit(x, y, r)
 }
 
 function setX() {

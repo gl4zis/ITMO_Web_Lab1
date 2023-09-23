@@ -7,6 +7,7 @@ const w = h
 const fontSize = w / 30
 const R = w * 0.4
 
+cv.onclick = sendClickCoords
 rField.onchange = function () {
     rValue = rField.value
     paintGraph()
@@ -81,8 +82,14 @@ function paintNewDot({x, y, hit}) {
 }
 
 function paintAllDots() {
-    for (let i = 1; i <= localStorage.length; i++) {
-        const row = JSON.parse(localStorage.getItem(i))
-        paintNewDot({x: row.x, y: row.y, hit: row.hit})
-    }
+    for (let i = 1; i <= localStorage.length; i++)
+        paintNewDot(JSON.parse(localStorage.getItem(i)))
+}
+
+function sendClickCoords(event) {
+    const rect = cv.getBoundingClientRect()
+    const x = (event.clientX - rect.left - w/2)*rValue/R
+    const y = (h/2 - (event.clientY - rect.top))*rValue/R
+
+    processCanvasClick(x, y)
 }
