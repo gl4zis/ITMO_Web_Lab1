@@ -5,7 +5,10 @@ const resetButton = document.getElementById('reset')
 window.request = superagent
 form.onsubmit = processForm
 resetButton.onclick = resetTable
-window.onload = fillTable
+window.onload = function () {
+    fillTable()
+    paint()
+}
 
 function processForm(e) {
     e.preventDefault()

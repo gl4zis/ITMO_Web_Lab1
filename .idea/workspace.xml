@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="Removed reset form">
+    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="ajax moved on SuperAgent">
+      <change afterPath="$PROJECT_DIR$/js/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +79,8 @@
       <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\js" />
+      <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\test" />
       <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\static" />
       <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\src" />
     </key>
@@ -93,7 +99,7 @@
       <workItem from="1694246825184" duration="7013000" />
       <workItem from="1694372707800" duration="45329000" />
       <workItem from="1694932091706" duration="4355000" />
-      <workItem from="1695380127776" duration="17425000" />
+      <workItem from="1695380127776" duration="23558000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -127,7 +133,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695412318403</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ajax moved on SuperAgent">
+      <option name="closed" value="true" />
+      <created>1695414546740</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1695414546740</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +163,7 @@
     <MESSAGE value="Validation fix" />
     <MESSAGE value="Validation (php) fix" />
     <MESSAGE value="Removed reset form" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed reset form" />
+    <MESSAGE value="ajax moved on SuperAgent" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajax moved on SuperAgent" />
   </component>
 </project>

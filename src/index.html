@@ -2,6 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <script src="https://cdn.jsdelivr.net/npm/superagent"></script>
+    <script src="../js/canvas.js" defer></script>
     <script src="../js/validation.js" defer></script>
     <script src="../js/ajax.js" defer></script>
     <script src="../js/three.r134.min.js"></script>
@@ -34,7 +35,7 @@
                             <td colspan="2">
                                 <label for="Y">Type Y:</label>
                                 <br>
-                                <input type="text" name="Y" id="Y" required
+                                <input type="text" name="Y" id="Y" required value="0"
                                        minlength="1" maxlength="10" placeholder="-5...3"/>
                             </td>
                             <td colspan="2">
@@ -43,7 +44,7 @@
                                 <select name="R" id="R" >
                                     <option value="1">1</option>
                                     <option value="1.5">1.5</option>
-                                    <option value="2">2</option>
+                                    <option value="2" selected>2</option>
                                     <option value="2.5">2.5</option>
                                     <option value="3">3</option>
                                 </select>
@@ -52,16 +53,19 @@
                                 <table class="form_table">
                                     <tr>
                                         <td>
-                                           <img class="zone mh-center mv-center" src="../static/zone.png"
+
+                                            <canvas id="canvas" width="250" height="250">
+                                                Something wrong
+                                            </canvas>
+
+                                           <!--<img class="zone mh-center mv-center" src="../static/zone.png"
                                                 alt="Image didn't found">
-                                            <!--
-                                           <canvas id="canv" class="zone mh-center mv-center">Some text</canvas>
-                                            -->
+                                                -->
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button class="mv-center" id="submit" type="submit" disabled>Submit</button>
+                                            <button class="mv-center" id="submit" type="submit">Submit</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -71,13 +75,13 @@
                             <td colspan="3">
                                     <p>Choose X:</p>
                                     <input type="radio" name="X" id="-2"
-                                           value="-2" checked/>
+                                           value="-2"/>
                                     <label for="-2">-2</label>
                                     <input type="radio" name="X" id="-1"
                                            value="-1"/>
                                     <label for="-1">-1</label>
                                     <input type="radio" name="X" id="0"
-                                           value="0"/>
+                                           value="0" checked/>
                                     <label for="0">0</label>
                                     <input type="radio" name="X" id="1"
                                            value="1"/>
