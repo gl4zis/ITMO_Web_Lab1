@@ -1,9 +1,8 @@
 const table = document.getElementById('res-table')
 
-function addTableRow({x, y, r, hit, date, time}) {
-    const index = table.rows.length
-    const row = table.insertRow(index)
-    row.insertCell(0).innerHTML = index-1
+function addTableRow(index, {x, y, r, hit, date, time}) {
+    const row = table.insertRow(table.rows.length)
+    row.insertCell(0).innerHTML = index
     row.insertCell(1).innerHTML = x
     row.insertCell(2).innerHTML = y
     row.insertCell(3).innerHTML = r
@@ -13,12 +12,20 @@ function addTableRow({x, y, r, hit, date, time}) {
 }
 
 function resetTable() {
-    for (let i = 0; i < localStorage.length; i++)
+    while (table.rows.length > 2)
         table.deleteRow(-1)
     localStorage.clear()
 }
 
 function fillTable() {
     for (let i = 1; i <= localStorage.length; i++)
-        addTableRow(JSON.parse(localStorage.getItem(String(i))))
+        addTableRow(i, JSON.parse(localStorage.getItem(String(i))))
+}
+
+function addIncorrectRow(reason) {
+    const row = table.insertRow(table.rows.length)
+    const cell = row.insertCell(0)
+    cell.innerHTML = reason
+    cell.colSpan = 7
+    cell.style.color = 'red'
 }

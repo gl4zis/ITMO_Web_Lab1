@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo json_encode($row);
     } else {
         http_response_code(400);
-        header('X-Status-Reason: Validation failed');
+        header('X_Status_Reason: Validation failed');
     }
 }
 
