@@ -3,7 +3,10 @@ const resetButton = document.getElementById('reset')
 
 window.request = superagent
 form.onsubmit = processForm
-resetButton.onclick = resetTable
+resetButton.onclick = function () {
+    resetTable()
+    paintGraph()
+}
 window.onload = function () {
     fillTable()
     paintGraph()
