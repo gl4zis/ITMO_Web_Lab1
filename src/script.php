@@ -9,9 +9,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         http_response_code(400);
         header('X_Status_Reason: Validation failed');
     }
+} else {
+    http_response_code(405);
+    header('X_Status_Reason: Only Get request method is allowed');
 }
 
-function new_result() : array {
+function new_result(): array {
     $x = NULL;
     $y = NULL;
     $r = NULL;
@@ -34,21 +37,21 @@ function new_result() : array {
         return array();
 }
 
-function valid_x($x) : bool {
+function valid_x($x): bool {
     return $x != NULL && is_numeric($x) && $x >= -2 && $x <= 5;
 }
 
-function valid_y($y) : bool {
+function valid_y($y): bool {
     return $y != NULL && is_numeric($y) && $y >= -5 && $y <= 3;
 }
 
-function valid_r($r) : bool {
+function valid_r($r): bool {
     $valid_r = [1, 1.5, 2, 2.5, 3];
 
     return $r != NULL && is_numeric($r) && in_array($r, $valid_r);
 }
 
-function check_hit($x, $y, $r) : bool {
+function check_hit($x, $y, $r): bool {
     if ($x < 0 && $y < 0)
         return false;
     else if ($y >= 0 && $x <= 0)
