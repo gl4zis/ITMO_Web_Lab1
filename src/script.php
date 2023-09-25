@@ -7,11 +7,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo json_encode($row);
     } else {
         http_response_code(400);
-        header('X_Status_Reason: Validation failed');
+        header('X-Status-Reason: Validation failed');
     }
 } else {
     http_response_code(405);
-    header('X_Status_Reason: Only Get request method is allowed');
+    header('X-Status-Reason: Only Get request method is allowed');
 }
 
 function new_result(): array {

@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="processing 400 (Bad Request)">
+    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="micro validation fix">
+      <change afterPath="$PROJECT_DIR$/js/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/superagent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/script.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/script.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +99,7 @@
       <workItem from="1694372707800" duration="45329000" />
       <workItem from="1694932091706" duration="4355000" />
       <workItem from="1695380127776" duration="34898000" />
-      <workItem from="1695568864220" duration="906000" />
+      <workItem from="1695568864220" duration="7321000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -209,7 +213,23 @@
       <option name="project" value="LOCAL" />
       <updated>1695477661091</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="server doesn't ignore requests with not get method">
+      <option name="closed" value="true" />
+      <created>1695571185474</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1695571185474</updated>
+    </task>
+    <task id="LOCAL-00016" summary="micro validation fix">
+      <option name="closed" value="true" />
+      <created>1695571276538</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1695571276538</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +258,8 @@
     <MESSAGE value="click on canvas to make hit" />
     <MESSAGE value="client validation fix" />
     <MESSAGE value="processing 400 (Bad Request)" />
-    <option name="LAST_COMMIT_MESSAGE" value="processing 400 (Bad Request)" />
+    <MESSAGE value="server doesn't ignore requests with not get method" />
+    <MESSAGE value="micro validation fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="micro validation fix" />
   </component>
 </project>

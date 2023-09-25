@@ -1,7 +1,7 @@
 const form = document.getElementById('submit-form')
 const resetButton = document.getElementById('reset')
+const request = superagent
 
-window.request = superagent
 form.onsubmit = processForm
 resetButton.onclick = function () {
     resetTable()
@@ -34,23 +34,23 @@ function setX() {
 }
 
 function submit(x, y, r) {
-    request
+    $.ajax({
+        url: "script.php",
+        dataType: "json",
+        method: "GET",
+        data: {"X": +Number(x).toFixed(4), "Y": +Number(y).toFixed(4), "R": r},
+        success: addHit,
+        error: addIncorrectRow
+        }
+    )
+    /*request
         .get("script.php")
         .query({"X": +Number(x).toFixed(4), "Y": +Number(y).toFixed(4), "R": r})
         .ok(res => res.status < 500)
         .then(processResponse)
         .then(addHit)
-        .catch(addIncorrectRow)
+        .catch(addIncorrectRow)*/
 }
-
-function processResponse(response) {
-    if (response.status === 200)
-        return response.body
-    else {
-        return Promise.reject(response.headers.x_status_reason)
-    }
-}
-
 function addHit({x, y, r, hit, time}) {
     const date = new Date().toLocaleString()
     localStorage.setItem(localStorage.length+1, JSON.stringify({x, y, r, hit, date, time}))

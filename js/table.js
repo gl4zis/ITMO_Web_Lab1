@@ -22,7 +22,8 @@ function fillTable() {
         addTableRow(i, JSON.parse(localStorage.getItem(String(i))))
 }
 
-function addIncorrectRow(reason) {
+function addIncorrectRow(response) {
+    const reason = response.getResponseHeader('x-status-reason')
     const row = table.insertRow(table.rows.length)
     const cell = row.insertCell(0)
     cell.innerHTML = reason
