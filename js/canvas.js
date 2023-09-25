@@ -1,19 +1,13 @@
-const cv = document.getElementById("canvas")
+import {submit} from "./main.js"
+
+export const cv = document.getElementById("canvas")
 const ctx = cv.getContext('2d')
-const rField = document.getElementById("R")
-let rValue = rField.value
+export const rField = document.getElementById("R")
 const h = cv.height
 const w = h
-const fontSize = w / 30
 const R = w * 0.4
 
-cv.onclick = sendClickCoords
-rField.onchange = function () {
-    rValue = rField.value
-    paintGraph()
-}
-
-function paintGraph() {
+export function paintGraph() {
     ctx.clearRect(0, 0, w, h)
 
     ctx.strokeStyle = '#CCCCCC'
@@ -52,6 +46,8 @@ function paintGraph() {
     ctx.moveTo(w / 2 + 5, h / 2 - R / 2)
     ctx.lineTo(w / 2 - 5, h / 2 - R / 2)
 
+    const rValue = rField.value
+    const fontSize = w / 30
 
     ctx.fillStyle = '#CCCCCC'
     ctx.font = 'bold ' + fontSize + 'pt Arial'
@@ -66,7 +62,7 @@ function paintGraph() {
     paintAllDots()
 }
 
-function paintNewDot({x, y, hit}) {
+export function paintNewDot({x, y, hit}) {
     switch (hit) {
         case "NO":
             ctx.fillStyle = '#FF0000'
@@ -74,6 +70,7 @@ function paintNewDot({x, y, hit}) {
         case "YES":
             ctx.fillStyle = '#00FF00'
     }
+    const rValue = rField.value
     const xCenter = w/2 + (R * x / rValue)
     const yCenter = h/2 - (R * y / rValue)
     ctx.beginPath()
@@ -86,10 +83,16 @@ function paintAllDots() {
         paintNewDot(JSON.parse(localStorage.getItem(i)))
 }
 
-function sendClickCoords(event) {
+export function sendClickCoords(event) {
+    const rValue = rField.value
     const rect = cv.getBoundingClientRect()
     const x = (event.clientX - rect.left - w/2)*rValue/R
     const y = (h/2 - (event.clientY - rect.top))*rValue/R
 
-    processCanvasClick(x, y)
+    processClick(x, y)
+}
+
+function processClick(x, y) {
+    const r = document.getElementById('R').value
+    submit(x, y, r)
 }

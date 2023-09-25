@@ -1,6 +1,6 @@
 const table = document.getElementById('res-table')
 
-function addTableRow(index, {x, y, r, hit, date, time}) {
+export function addTableRow(index, {x, y, r, hit, date, time}) {
     const row = table.insertRow(table.rows.length)
     row.insertCell(0).innerHTML = index
     row.insertCell(1).innerHTML = x
@@ -11,18 +11,18 @@ function addTableRow(index, {x, y, r, hit, date, time}) {
     row.insertCell(6).innerHTML = time
 }
 
-function resetTable() {
+export function resetTable() {
     while (table.rows.length > 2)
         table.deleteRow(-1)
     localStorage.clear()
 }
 
-function fillTable() {
+export function fillTable() {
     for (let i = 1; i <= localStorage.length; i++)
         addTableRow(i, JSON.parse(localStorage.getItem(String(i))))
 }
 
-function addIncorrectRow(response) {
+export function addIncorrectRow(response) {
     const reason = response.getResponseHeader('x-status-reason')
     const row = table.insertRow(table.rows.length)
     const cell = row.insertCell(0)

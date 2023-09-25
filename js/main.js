@@ -1,9 +1,13 @@
-const form = document.getElementById('submit-form')
-const resetButton = document.getElementById('reset')
-const request = superagent
+import {yField, validateY} from "./validation.js"
+import {processForm} from "./form.js"
+import {fillTable, addIncorrectRow, addTableRow, resetTable} from "./table.js"
+import {cv, paintGraph, paintNewDot, rField, sendClickCoords} from "./canvas.js"
 
-form.onsubmit = processForm
-resetButton.onclick = function () {
+cv.onclick = sendClickCoords
+rField.onchange = paintGraph
+yField.oninput = validateY
+document.getElementById('submit-form').onsubmit = processForm
+document.getElementById('reset').onclick = function () {
     resetTable()
     paintGraph()
 }
@@ -12,28 +16,8 @@ window.onload = function () {
     paintGraph()
 }
 
-function processForm(e) {
-    e.preventDefault()
-    const x = setX()
-    const y = document.getElementById('Y').value
-    const r = document.getElementById('R').value
-    submit(x, y, r)
-}
 
-function processCanvasClick(x, y) {
-    const r = document.getElementById('R').value
-    submit(x, y, r)
-}
-
-function setX() {
-    for (let i = -2; i < 6; i++) {
-        let x = document.getElementById(String(i))
-        if (x.checked)
-            return x.value
-    }
-}
-
-function submit(x, y, r) {
+export function submit(x, y, r) {
     $.ajax({
         url: "script.php",
         dataType: "json",

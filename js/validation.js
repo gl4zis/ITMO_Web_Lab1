@@ -1,16 +1,14 @@
-const yField = document.getElementById('Y')
+export const yField = document.getElementById('Y')
 const submitButton = document.getElementById('submit')
-const colorWrong = '#FF0000'
-const colorRight = '#00FF00'
 const regex = /^-?\d([\.,]\d{1,4})?$/
 
-yField.oninput = function () {
+export function validateY() {
     const y = parseFloat(yField.value.replace(',', '.'))
     if (!regex.test(yField.value) || y < -5 || y > 3) {
-        yField.style.borderColor = colorWrong
+        yField.style.borderColor = '#FF0000'
         submitButton.disabled = true
     } else {
-        yField.style.borderColor = colorRight
+        yField.style.borderColor = '#00FF00'
         submitButton.disabled = false
     }
 }
