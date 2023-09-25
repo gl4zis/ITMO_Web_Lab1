@@ -6,7 +6,7 @@ import {cv, paintGraph, paintNewDot, rField, sendClickCoords} from "./canvas.js"
 cv.onclick = sendClickCoords
 rField.onchange = paintGraph
 yField.oninput = validateY
-document.getElementById('submit-form').onsubmit = processForm
+document.getElementById('submit').onclick = processForm
 document.getElementById('reset').onclick = function () {
     resetTable()
     paintGraph()
