@@ -1,7 +1,7 @@
 import {yField, validateY} from "./validation.js"
 import {processForm} from "./form.js"
-import {fillTable, addIncorrectRow, addTableRow, resetTable} from "./table.js"
-import {cv, paintGraph, paintNewDot, rField, sendClickCoords} from "./canvas.js"
+import {addIncorrectRow, refillTable} from "./table.js"
+import {cv, paintGraph, rField, sendClickCoords} from "./canvas.js"
 
 cv.onclick = sendClickCoords
 rField.onchange = paintGraph
@@ -12,37 +12,46 @@ document.getElementById('reset').onclick = function () {
     paintGraph()
 }
 window.onload = function () {
-    fillTable()
+    getTable()
     paintGraph()
 }
 
+function getTable() {
+    superagent
+        .get('script.php')
+        .then(processResponse)
+}
 
 export function submit(x, y, r) {
-    $.ajax({
-        url: "script.php",
-        dataType: "json",
-        method: "GET",
-        data: {"X": +Number(x).toFixed(4), "Y": +Number(y).toFixed(4), "R": r},
-        success: processResponse
-        }
-    )
-    /*request
+    superagent
         .get("script.php")
         .query({"X": +Number(x).toFixed(4), "Y": +Number(y).toFixed(4), "R": r})
         .then(processResponse)
-    */
 }
 
-function processResponse(body) {
+function resetTable() {
+    const table = document.getElementById('res-table')
+    const rows = table.rows.length
+    for (let i = 2; i < rows; i++)
+        table.deleteRow(-1)
+    superagent
+        .get("script.php")
+        .query({"delete": true})
+        .then(processResponse)
+}
+
+function processResponse(response) {
+    const body = response.body
     if (body.status === 200)
-        addHit(body.row)
+        addHit(body.table)
     else
         addIncorrectRow(body['status-reason'])
 }
 
-function addHit({x, y, r, hit, time}) {
-    const date = new Date().toLocaleString()
+function addHit(htmlTable) {
+    refillTable(htmlTable)
+    /*const date = new Date().toLocaleString()
     localStorage.setItem(localStorage.length+1, JSON.stringify({x, y, r, hit, date, time}))
     addTableRow(localStorage.length, {x, y, r, hit, date, time})
-    paintNewDot({x, y, hit})
+    paintNewDot({x, y, hit})*/
 }

@@ -2,22 +2,78 @@
 
 header('Content-type: application/json');
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $row = new_result();
-    if (count($row) > 0) {
-        echo json_encode([
-            'status' => 200,
-            'row' => $row]);
+    if (!isset($_SESSION))
+        session_start();
+    if (!isset($_SESSION['table'])) {
+        $_SESSION['table'] = get_html_table_headers();
+        $_SESSION['table_length'] = 0;
+    }
+
+    if (empty($_GET)) {
+        send_table();
+    } else if (isset($_GET['delete']) && $_GET['delete'] == true) {
+        $_SESSION['table'] = get_html_table_headers();
+        $_SESSION['table_length'] = 0;
+        send_table();
     } else {
-        echo json_encode([
-            'status' => 400,
-            'status-reason' => 'Validation failed'
-        ]);
+        $row = new_result();
+        if (count($row) > 0) {
+            add_row_in_table($row);
+            send_table();
+        } else {
+            echo json_encode([
+                'status' => 400,
+                'status-reason' => 'Validation failed'
+            ]);
+        }
     }
 } else {
     echo json_encode([
         'status' => 405,
         'status-reason' => 'Only Get request method is allowed'
     ]);
+}
+
+function send_table(): void {
+    echo json_encode([
+        'status' => 200,
+        'table' => $_SESSION['table'] . '</table>']);
+}
+
+function get_html_table_headers(): string {
+    return '<table id="res-table" class="results mh-center">
+                    <tr>
+                        <th colspan="7">
+                            <h3>Results:</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>№</td>
+                        <td>X</td>
+                        <td>Y</td>
+                        <td>R</td>
+                        <td>Hit</td>
+                        <td>Time</td>
+                        <td>Time of work</td>
+                    </tr>';
+}
+
+function add_row_in_table($row): void {
+    $html_row = get_html_row($row);
+    $_SESSION['table'] .= $html_row;
+}
+
+function get_html_row($row): string {
+    $answer = '<tr>';
+    $answer .= '<td>' . ++$_SESSION['table_length'] . '</td>';
+    $answer .= '<td>' . $row['x'] . '</td>';
+    $answer .= '<td>' . $row['y'] . '</td>';
+    $answer .= '<td>' . $row['r'] . '</td>';
+    $answer .= '<td>' . $row['hit'] . '</td>';
+    $answer .= '<td>' . $row['date'] . '</td>';
+    $answer .= '<td>' . $row['time'] . '</td>';
+    $answer .= '</tr>';
+    return $answer;
 }
 
 function new_result(): array {
@@ -37,6 +93,7 @@ function new_result(): array {
             'y' => $y,
             'r' => $r,
             'hit' => check_hit($x, $y, $r) ? "YES" : "NO",
+            'date' => date("Y-m-d H:i:s T"),
             'time' => number_format((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']) * 1000, 3) . "ms"
         );
     } else

@@ -60,8 +60,6 @@ export function paintGraph() {
     ctx.fillText(rValue/2, w / 2 + R / 2 - fontSize, h / 2 - fontSize / 2)
 
     ctx.stroke()
-
-    paintAllDots()
 }
 
 export function paintNewDot({x, y, hit}) {
@@ -78,11 +76,6 @@ export function paintNewDot({x, y, hit}) {
     ctx.beginPath()
     ctx.arc(xCenter, yCenter, w/100, 0, Math.PI*2, true)
     ctx.fill()
-}
-
-function paintAllDots() {
-    for (let i = 1; i <= localStorage.length; i++)
-        paintNewDot(JSON.parse(localStorage.getItem(i)))
 }
 
 export function sendClickCoords(event) {

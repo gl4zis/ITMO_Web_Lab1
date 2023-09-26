@@ -11,21 +11,14 @@ export function addTableRow(index, {x, y, r, hit, date, time}) {
     row.insertCell(6).innerHTML = time
 }
 
-export function resetTable() {
-    while (table.rows.length > 2)
-        table.deleteRow(-1)
-    localStorage.clear()
-}
-
-export function fillTable() {
-    for (let i = 1; i <= localStorage.length; i++)
-        addTableRow(i, JSON.parse(localStorage.getItem(String(i))))
-}
-
 export function addIncorrectRow(reason) {
     const row = table.insertRow(table.rows.length)
     const cell = row.insertCell(0)
     cell.innerHTML = reason
     cell.colSpan = 7
     cell.style.color = 'red'
+}
+
+export function refillTable(htmlTable) {
+    table.innerHTML = htmlTable
 }
