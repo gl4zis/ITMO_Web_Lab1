@@ -1,17 +1,23 @@
 <?php
 
+header('Content-type: application/json');
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $row = new_result();
     if (count($row) > 0) {
-        header('Content-type: application/json');
-        echo json_encode($row);
+        echo json_encode([
+            'status' => 200,
+            'row' => $row]);
     } else {
-        http_response_code(400);
-        header('X-Status-Reason: Validation failed');
+        echo json_encode([
+            'status' => 400,
+            'status-reason' => 'Validation failed'
+        ]);
     }
 } else {
-    http_response_code(405);
-    header('X-Status-Reason: Only Get request method is allowed');
+    echo json_encode([
+        'status' => 405,
+        'status-reason' => 'Only Get request method is allowed'
+    ]);
 }
 
 function new_result(): array {

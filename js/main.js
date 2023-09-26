@@ -23,25 +23,26 @@ export function submit(x, y, r) {
         dataType: "json",
         method: "GET",
         data: {"X": +Number(x).toFixed(4), "Y": +Number(y).toFixed(4), "R": r},
-        success: addHit,
-        error: response => addIncorrectRow(getStatusReason(response))
+        success: processResponse
         }
     )
     /*request
         .get("script.php")
         .query({"X": +Number(x).toFixed(4), "Y": +Number(y).toFixed(4), "R": r})
-        .ok(res => res.status < 500)
         .then(processResponse)
-        .then(addHit)
-        .catch(addIncorrectRow)*/
+    */
 }
+
+function processResponse(body) {
+    if (body.status === 200)
+        addHit(body.row)
+    else
+        addIncorrectRow(body['status-reason'])
+}
+
 function addHit({x, y, r, hit, time}) {
     const date = new Date().toLocaleString()
     localStorage.setItem(localStorage.length+1, JSON.stringify({x, y, r, hit, date, time}))
     addTableRow(localStorage.length, {x, y, r, hit, date, time})
     paintNewDot({x, y, hit})
-}
-
-function getStatusReason(response) {
-    return response.getResponseHeader('x-status-reason')
 }
