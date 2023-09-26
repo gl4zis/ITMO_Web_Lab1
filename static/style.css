@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: sans-serif;
     font-size: 16pt;
-    color: #CCCCCC;
+    color: #CCC;
     background: #0A0A0A;
 }
 
@@ -16,10 +16,13 @@ body {
     border-spacing: 50px;
 }
 
-img.zone {
-    width: 60%;
-    border-radius: 15%;
-    -moz-border-radius: 15%;
+table.results th, table.results td {
+    border: #CCC 2px solid;
+    padding: 10px;
+}
+
+table.results td {
+    font-size: 14pt;
 }
 
 td.zone {
@@ -35,7 +38,6 @@ td.zone table td {
 .container {
     background: #202020DD;
     border-radius: 50px;
-    -moz-border-radius: 50px;
     padding: 3%;
 }
 
@@ -43,15 +45,14 @@ td.zone table td {
     width: 40%;
 }
 
-table.form_table {
+table.form-table {
     width: 100%;
     border-spacing: 20px;
 }
 
-table.form_table td:not(.zone) {
+table.form-table td:not(.zone) {
     background: #101010AA;
     border-radius: 30px;
-    -moz-border-radius: 30px;
     padding: 2%;
     text-align: center;
 }
@@ -78,13 +79,10 @@ table.form_table td:not(.zone) {
     float: left;
 }
 
-input[type=text], select, button {
+input[type='text'], select, button {
     font-family: inherit;
-    background: #EEEEEE;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    background: #EEE;
     border-radius: 15px;
-    -moz-border-radius: 15px;
     margin-top: 15px;
     font-size: 12pt;
     font-weight: bold;
@@ -107,8 +105,8 @@ input {
     outline: none;
 }
 
-input#Y {
-    border: 2px solid #00FF00;
+input#y {
+    border: 2px solid #0F0;
 }
 
 table.results {
@@ -117,24 +115,19 @@ table.results {
     border-spacing: 0;
 }
 
-table.results th, table.results td {
-    border: #CCCCCC 2px solid;
-    padding: 10px;
-}
-
-table.results td {
-    font-size: 14pt;
-}
- /*Rounded border for table*/
+ /* Rounded border for table */
 table.results tr:first-child th:first-child {
     border-top-left-radius: 20px;
 }
+
 table.results tr:first-child th:last-child {
     border-top-right-radius: 20px;
 }
+
 table.results tr:last-child td:first-child {
     border-bottom-left-radius: 20px;
 }
+
 table.results tr:last-child td:last-child {
     border-bottom-right-radius: 20px;
 }

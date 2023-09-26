@@ -1,4 +1,4 @@
-export const yField = document.getElementById('Y')
+export const yField = document.getElementById('y')
 const submitButton = document.getElementById('submit')
 const regex = /^-?\d([\.,]\d{1,4})?$/
 
