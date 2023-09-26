@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="module pattern in js">
+    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="removed main form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -233,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695653230973</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="removed main form">
+      <option name="closed" value="true" />
+      <created>1695671134144</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1695671134144</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,6 +277,7 @@
     <MESSAGE value="server doesn't ignore requests with not get method" />
     <MESSAGE value="micro validation fix" />
     <MESSAGE value="module pattern in js" />
-    <option name="LAST_COMMIT_MESSAGE" value="module pattern in js" />
+    <MESSAGE value="removed main form" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed main form" />
   </component>
 </project>

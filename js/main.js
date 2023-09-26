@@ -24,7 +24,7 @@ export function submit(x, y, r) {
         method: "GET",
         data: {"X": +Number(x).toFixed(4), "Y": +Number(y).toFixed(4), "R": r},
         success: addHit,
-        error: addIncorrectRow
+        error: response => addIncorrectRow(getStatusReason(response))
         }
     )
     /*request
@@ -40,4 +40,8 @@ function addHit({x, y, r, hit, time}) {
     localStorage.setItem(localStorage.length+1, JSON.stringify({x, y, r, hit, date, time}))
     addTableRow(localStorage.length, {x, y, r, hit, date, time})
     paintNewDot({x, y, hit})
+}
+
+function getStatusReason(response) {
+    return response.getResponseHeader('x-status-reason')
 }

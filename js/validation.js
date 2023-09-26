@@ -12,3 +12,7 @@ export function validateY() {
         submitButton.disabled = false
     }
 }
+
+export function validatePoint(x, y) {
+    return !(y < -5 || y > 3 || x < -2 || x > 5);
+}

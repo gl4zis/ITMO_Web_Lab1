@@ -22,8 +22,7 @@ export function fillTable() {
         addTableRow(i, JSON.parse(localStorage.getItem(String(i))))
 }
 
-export function addIncorrectRow(response) {
-    const reason = response.getResponseHeader('x-status-reason')
+export function addIncorrectRow(reason) {
     const row = table.insertRow(table.rows.length)
     const cell = row.insertCell(0)
     cell.innerHTML = reason

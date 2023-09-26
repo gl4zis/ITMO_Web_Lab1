@@ -1,4 +1,6 @@
 import {submit} from "./main.js"
+import {validatePoint} from "./validation.js";
+import {addIncorrectRow} from "./table.js";
 
 export const cv = document.getElementById("canvas")
 const ctx = cv.getContext('2d')
@@ -94,5 +96,8 @@ export function sendClickCoords(event) {
 
 function processClick(x, y) {
     const r = document.getElementById('R').value
-    submit(x, y, r)
+    if (validatePoint(x, y))
+        submit(x, y, r)
+    else
+        addIncorrectRow('Validation failed!')
 }
