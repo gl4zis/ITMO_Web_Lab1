@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="saving data in localStorage">
+    <list default="true" id="da620a5c-64a8-42b1-aa79-7ccebd9f4990" name="Changes" comment="css file style fixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/form.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/myVanta.js" beforeDir="false" afterPath="$PROJECT_DIR$/js_modules/myVanta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/superagent.js" beforeDir="false" afterPath="$PROJECT_DIR$/js_modules/superagent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/table.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/three.r134.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js_modules/three.r134.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/vanta.net.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/js_modules/vanta.net.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
     </list>
@@ -75,6 +84,7 @@
       <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\js_modules" />
       <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\js" />
       <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\test" />
       <recent name="C:\Users\Roma\Desktop\ITMO\Web\lab1\static" />
@@ -97,7 +107,7 @@
       <workItem from="1694932091706" duration="4355000" />
       <workItem from="1695380127776" duration="34898000" />
       <workItem from="1695568864220" duration="7321000" />
-      <workItem from="1695739652556" duration="2377000" />
+      <workItem from="1695739652556" duration="3924000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -283,7 +293,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695741660333</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="css file style fixed">
+      <option name="closed" value="true" />
+      <created>1695742248460</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1695742248460</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -320,7 +338,8 @@
     <MESSAGE value="response status in body" />
     <MESSAGE value="servers returns html" />
     <MESSAGE value="saving data in localStorage" />
-    <option name="LAST_COMMIT_MESSAGE" value="saving data in localStorage" />
+    <MESSAGE value="css file style fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="css file style fixed" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

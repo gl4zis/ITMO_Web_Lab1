@@ -2,12 +2,15 @@ import {submit} from "./main.js"
 import {validatePoint} from "./validation.js";
 import {addIncorrectRow} from "./table.js";
 
-export const cv = document.getElementById("canvas")
+const cv = document.getElementById("canvas")
 const ctx = cv.getContext('2d')
-export const rField = document.getElementById("R")
+const rField = document.getElementById("r")
 const h = cv.height
 const w = h
 const R = w * 0.4
+
+cv.onclick = sendClickCoords
+rField.onchange = paintGraph
 
 export function paintGraph() {
     ctx.clearRect(0, 0, w, h)
@@ -60,6 +63,8 @@ export function paintGraph() {
     ctx.fillText(rValue/2, w / 2 + R / 2 - fontSize, h / 2 - fontSize / 2)
 
     ctx.stroke()
+
+    setHitsFromLocal()
 }
 
 export function paintNewDot({x, y, hit}) {
@@ -88,9 +93,15 @@ export function sendClickCoords(event) {
 }
 
 function processClick(x, y) {
-    const r = document.getElementById('R').value
     if (validatePoint(x, y))
-        submit(x, y, r)
+        submit(x, y, rField.value)
     else
         addIncorrectRow('Validation failed!')
+}
+
+function setHitsFromLocal() {
+    for (let i = 1; i <= localStorage.length; i++) {
+        const row = JSON.parse(localStorage.getItem(i))
+        paintNewDot({x: row.x, y: row.y, hit: row.hit})
+    }
 }

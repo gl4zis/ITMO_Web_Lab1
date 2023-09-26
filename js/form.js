@@ -1,10 +1,9 @@
 import {submit} from './main.js'
 
-export function processForm(e) {
-    e.preventDefault()
+document.getElementById('submit').onclick = function () {
     const x = setX()
-    const y = document.getElementById('Y').value
-    const r = document.getElementById('R').value
+    const y = document.getElementById('y').value
+    const r = document.getElementById('r').value
     submit(x, y, r)
 }
 

@@ -18,3 +18,18 @@ export function addIncorrectRow(reason) {
     cell.colSpan = 7
     cell.style.color = 'red'
 }
+
+export function fillTableFromLocal() {
+    for (let i = 1; i <= localStorage.length; i++)
+        addTableRow(JSON.parse(localStorage.getItem(i)))
+}
+
+export function resetTable() {
+    localStorage.clear()
+    const table = document.getElementById('res-table')
+    while (table.rows.length > 2)
+        table.deleteRow(-1)
+    superagent
+        .get("script.php")
+        .query({"delete": true})
+}
