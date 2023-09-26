@@ -1,8 +1,8 @@
 const table = document.getElementById('res-table')
 
-export function addTableRow(index, {x, y, r, hit, date, time}) {
+export function addTableRow({x, y, r, hit, date, time}) {
     const row = table.insertRow(table.rows.length)
-    row.insertCell(0).innerHTML = index
+    row.insertCell(0).innerHTML = table.rows.length-2
     row.insertCell(1).innerHTML = x
     row.insertCell(2).innerHTML = y
     row.insertCell(3).innerHTML = r
@@ -17,8 +17,4 @@ export function addIncorrectRow(reason) {
     cell.innerHTML = reason
     cell.colSpan = 7
     cell.style.color = 'red'
-}
-
-export function refillTable(htmlTable) {
-    table.innerHTML = htmlTable
 }

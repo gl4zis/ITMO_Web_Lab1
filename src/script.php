@@ -5,15 +5,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (!isset($_SESSION))
         session_start();
     if (!isset($_SESSION['table'])) {
-        $_SESSION['table'] = get_html_table_headers();
-        $_SESSION['table_length'] = 0;
+        $_SESSION['table'] = '';
     }
 
     if (empty($_GET)) {
         send_table();
     } else if (isset($_GET['delete']) && $_GET['delete'] == true) {
-        $_SESSION['table'] = get_html_table_headers();
-        $_SESSION['table_length'] = 0;
+        $_SESSION['table'] = '';
         send_table();
     } else {
         $row = new_result();
@@ -37,25 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 function send_table(): void {
     echo json_encode([
         'status' => 200,
-        'table' => $_SESSION['table'] . '</table>']);
-}
-
-function get_html_table_headers(): string {
-    return '<table id="res-table" class="results mh-center">
-                    <tr>
-                        <th colspan="7">
-                            <h3>Results:</h3>
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>№</td>
-                        <td>X</td>
-                        <td>Y</td>
-                        <td>R</td>
-                        <td>Hit</td>
-                        <td>Time</td>
-                        <td>Time of work</td>
-                    </tr>';
+        'table' => $_SESSION['table']]);
 }
 
 function add_row_in_table($row): void {
@@ -65,7 +45,7 @@ function add_row_in_table($row): void {
 
 function get_html_row($row): string {
     $answer = '<tr>';
-    $answer .= '<td>' . ++$_SESSION['table_length'] . '</td>';
+    $answer .= '<td>' . 0 . '</td>';
     $answer .= '<td>' . $row['x'] . '</td>';
     $answer .= '<td>' . $row['y'] . '</td>';
     $answer .= '<td>' . $row['r'] . '</td>';
